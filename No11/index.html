@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>相模原キャンパスの綺麗な風景</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./btn.css">
+    <link rel="stylesheet" href="./dist/css/swiper.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+	
+  <body>
+    <div class="navbar">
+      <div class="navbar-l">
+        <h1 class="navlogo">AGU 相模原</h1>
+      </div>
+      <div class="navbar-r">
+        <ul class="dropmenu">
+          <li><a href="#trees">大きな木コレクション</a>
+            <ul>
+              <li><a href=""> その1 </a></li>
+              <li><a href=""> その2 </a></li>
+              <li><a href=""> その3 </a></li>
+            </ul>
+          </li>
+          <li><a href="#symbiosis">自然物と人工物の共存</a>
+            <ul>
+              <li><a href=""> その1 </a></li>
+              <li><a href=""> その2 </a></li>
+              <li><a href=""> その3 </a></li>
+            </ul>
+          </li>
+          <li><a href="#plants">花や植物シリーズ</a>
+            <ul>
+              <li><a href=""> その1 </a></li>
+              <li><a href=""> その2 </a></li>
+              <li><a href=""> その3 </a></li>
+            </ul>
+          </li>
+          <li><a href="#chapel">ウェスレーチャペルのある風景</a>
+            <ul>
+              <li><a href=""> その1 </a></li>
+              <li><a href=""> その2 </a></li>
+              <li><a href=""> その3 </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./images/sagamihara1.jpg" /></div>
+        <div class="swiper-slide"><img src="./images/sagamihara2.jpg" /></div>
+        <div class="swiper-slide"><img src="./images/sagamihara3.jpg" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="content-box">
+      <div class="content-item">
+        <h2 id="symbiosis">自然物と人工物の共存</h2>
+        <div class="image-box">
+          <img class="image-item" src="./images/symbiosis/img_s001.jpg" />
+          <img class="image-item" src="./images/symbiosis/img_s002.jpg" />
+          <img class="image-item" src="./images/symbiosis/img_s003.jpg" />
+        </div>
+      </div>
+
+      <div class="content-item">
+        <h2 id="chapel">ウェスレーチャペルのある風景</h2>
+        <div class="image-box">
+          <img class="image-item" src="./images/chapel/img_c001.jpg" />
+          <img class="image-item" src="./images/chapel/img_c002.jpg" />
+          <img class="image-item" src="./images/chapel/img_c003.jpg" />
+        </div>
+      </div>
+
+      <div class="content-item">
+        <h2 id="trees">大きな木コレクション</h2>
+        <div class="image-box">
+          <img class="image-item" src="./images/large_trees/img_t001.jpg" />
+          <img class="image-item" src="./images/large_trees/img_t002.jpg" />
+          <img class="image-item" src="./images/large_trees/img_t003.jpg" />
+        </div>
+      </div>
+
+      <div class="content-item">
+        <h2 id="plants">花や植物シリーズ</h2>
+        <div class="image-box">
+          <img class="image-item" src="./images/flowers_and_plants/img_f001.jpg" />
+          <img class="image-item" src="./images/flowers_and_plants/img_f002.jpg" />
+          <img class="image-item" src="./images/flowers_and_plants/img_f003.jpg" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom">
+      <div class="links">
+        <a href="https://www.aoyama.ac.jp/outline/campus/aoyama.html"><div class="btn btn-green">青山</div></a>
+        <a href="https://www.aoyama.ac.jp/outline/campus/sagamihara.html"><div class="btn btn-red">相模原</div></a>
+      </div>
+    </div>
+
+    <script src="./dist/js/swiper.js"></script>
+    <script src="./btn.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+        },
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true
+        },
+        effect: "coverflow",
+        speed: 1500
+      });
+
+      window.onload = init;
+    </script>
+  </body>
+</html>

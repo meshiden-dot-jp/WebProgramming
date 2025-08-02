@@ -1,0 +1,90 @@
+a:hover {
+  opacity: 0.5;
+} 
+
+a {
+  opacity: 1;
+}
+
+body { 
+  background: linear-gradient(#e0f0ff, #e0fff0);
+}
+
+img {
+  width: 180px;
+  padding: 0px;
+  margin: 2px 2px;
+} 
+
+.mybox{
+  background-color: #ddffbb;
+  padding: 30px 30px;
+  width: 80%;
+  margin: 8px auto;
+  border-radius: 24px;
+  box-shadow: 1px 1px 10px -5px rgba(0.3, 0.7, 0.4, 0.8);
+}
+
+.myfont {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.dummy{
+  height: 0;
+  padding: 0;
+  margin: 0 2px;
+  width: 182px;
+}
+
+.box-item{
+  background-color: #ddffbb;
+  padding: 10px 10px;
+  border: solid #559966;
+  border-width: 1px;
+  height: auto;
+  margin: 10px 10px;
+}
+
+.box-item-dummy{
+  padding: 0 10px;
+  height: 0;
+  margin: 0 10px;
+}
+
+.box-item:hover{
+  background-color: #559966;
+}
+
+.greentxt {
+	color: #117f33;
+}
+
+h1 {
+	font-size: 28px;
+  text-align: center;
+}
+
+h2 {
+	font-size: 20px;
+  background-color: #559966;
+  padding: 5px;
+  color: #ddffdd;
+  text-align: center;
+}
+
+p {
+	font-size: 16px;
+}
+
+hr {
+  border: none;
+  background-color: #f0fff6;
+  border-top: 2px dashed #117f33;
+}
+

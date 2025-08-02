@@ -1,0 +1,322 @@
+@media screen and (max-width:800px) {
+
+    #about_max {
+        display: none;
+        width: 100%;
+    }
+
+
+    .about_max_container {
+        display: block;
+        width: 100%;
+    }
+
+
+    h1 {
+        font-size: 26px;
+        padding-top: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    #session,
+    #booth,
+    #about {
+        padding: 0;
+    }
+
+    .about_max_container,
+    .about-aim-container,
+    .booth_container {
+        width: auto;
+        margin: 0;
+        margin: 16px;
+    }
+
+    .container {
+        width: auto;
+    }
+
+    .image {
+        margin-left: 0px;
+        height: 60px;
+    }
+
+    header ul {
+        display: none;
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .top-visual {
+        height: 600px;
+    }
+
+    .top-visual h1 {
+        font-size: 150px;
+        font-family: "din-2014", "ryo-gothic-plusn", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    .top-visual h2 {
+        display: none;
+    }
+
+    .txts {
+        margin-top: 150px;
+    }
+
+    .container {
+        display: grid;
+        /* width: 100%; */
+        margin: 0;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        padding: 0 16px;
+        grid-template-columns: repeat(1, minmax(0, 100%));
+    }
+
+    #overlay-1,
+    #overlay-2 {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+
+    }
+
+    #overlay-inner-1,
+    #overlay-inner-2 {
+        padding: 0;
+        width: 95%;
+        height: 70%;
+
+
+    }
+
+    #close-btn-1,
+    #close-btn-2 {
+        top: 18%;
+        right: 7%;
+    }
+
+    #session h1,
+    #about h1,
+    #booth h1 {
+        padding-top: 90px;
+    }
+
+
+    .speaker-wrapper {
+        display: grid;
+        margin: auto;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        grid-column-gap: 24px;
+        grid-row-gap: 24px;
+        margin-bottom: 40px;
+        padding-bottom: 0;
+        grid-template-columns: repeat(1, minmax(0, 100%));
+    }
+
+    .area h3 {
+        margin-left: 0;
+    }
+
+    .speaker-box {
+        width: auto;
+        margin: 0;
+        padding-bottom: 40px;
+    }
+
+    .eye {
+        display: none;
+    }
+
+    :root {
+        --swiper-navigation-size: 10px;
+        /*
+        --swiper-navigation-color: var(--swiper-theme-color);
+        */
+    }
+
+    .detail-txt {
+        width: 100%;
+        margin: auto;
+    }
+
+    .lead-txt {
+        width: 90%;
+        margin: auto;
+    }
+
+    .session_image {
+        width: 90%;
+    }
+
+    .swiper-slide {
+        width: 100%;
+    }
+
+    .box img {
+        width: 100%;
+    }
+
+    .box_txt {
+        width: 85%;
+    }
+
+    .speaker-box img {
+        width: 90%;
+    }
+
+    .areamap {
+        width: 90%;
+    }
+
+    #about p {
+        width: 85%;
+    }
+
+    #about img {
+        width: 90%;
+    }
+
+    .left,
+    .right {
+        width: 150px;
+    }
+
+    .image {
+        float: left;
+        height: 30px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    footer ul {
+        margin: 0;
+    }
+
+    .logo_image {
+        margin-left: 20px;
+    }
+
+    /* ここから下がハンバーガーメニューに関するCSS */
+
+    /* チェックボックスを非表示にする */
+    .drawer_hidden {
+        display: none;
+    }
+
+    /* ハンバーガーアイコンの設置スペース */
+    .drawer_open {
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+        /* 重なり順を一番上にする */
+        cursor: pointer;
+        float: right;
+    }
+
+    /* ハンバーガーメニューのアイコン */
+    .drawer_open span,
+    .drawer_open span:before,
+    .drawer_open span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background: #333;
+        transition: 0.5s;
+        position: absolute;
+    }
+
+    /* 三本線の一番上の棒の位置調整 */
+    .drawer_open span:before {
+        bottom: 8px;
+    }
+
+    /* 三本線の一番下の棒の位置調整 */
+    .drawer_open span:after {
+        top: 8px;
+    }
+
+    /* アイコンがクリックされたら真ん中の線を透明にする */
+    #drawer_input:checked~.drawer_open span {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #drawer_input:checked~.drawer_open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    #drawer_input:checked~.drawer_open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* メニューのデザイン*/
+    .nav_content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        /* メニューを画面の外に飛ばす */
+        z-index: 99;
+        background: white;
+        transition: .5s;
+    }
+
+    /* メニュー黒ポチを消す */
+    .nav_list {
+        list-style: none;
+    }
+
+    /* アイコンがクリックされたらメニューを表示 */
+    #drawer_input:checked~.nav_content {
+        left: 0;
+        /* メニューを画面に入れる */
+        display: block;
+    }
+
+    header li {
+        line-height: 100px;
+    }
+
+    .nav_item {
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav_item a {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .nav_list {
+        display: block;
+    }
+
+    .copyright p {
+        font-size: 12px;
+    }
+}

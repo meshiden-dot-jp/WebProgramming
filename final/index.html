@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="sub.css">
+    <link rel="stylesheet" href="./dist/css/swiper.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rii4ask.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="main.js"></script>
+    <title>MAX</title>
+</head>
+
+<body>
+
+    <!-- ヘッダーここから -->
+    <header>
+
+        <!-- デスクトップ用メニュー -->
+        <div class="list">
+            <a href="#top">
+                <img class="logo_image" src="./images/max_logo.svg" alt="MAXロゴ画像">
+            </a>
+            <ul>
+                <a href="index.html#session">
+                    <li>Session</li>
+                </a>
+                <a href="index.html#booth">
+                    <li>Booth</li>
+                </a>
+                <a href="index.html#about">
+                    <li>AIM Commons</li>
+                </a>
+            </ul>
+        </div>
+
+        <!-- モバイル用ハンバーガーメニュー -->
+        <div class="nav">
+            <a href="#top">
+                <img class="logo_image" src="./images/max_logo.svg" alt="MAXロゴ画像">
+            </a>
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer_input" class="drawer_open"><span></span></label>
+
+            <!-- メニュー -->
+            <nav class="nav_content">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#session" onclick="uncheckCheckbox();">Session</a></li>
+                    <li class="nav_item"><a href="#booth" onclick="uncheckCheckbox();">Booth</a></li>
+                    <li class="nav_item"><a href="#about" onclick="uncheckCheckbox();">AIM Commons</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- ヘッダーここまで -->
+
+    <!-- トップビジュアルここから -->
+    <div class="top-visual">
+        <h2>好きこそものの上手なれ ── 。</h2>
+        <h1>MAX</h1>
+        <div class="txts">
+            <a class="txt link_btn" href="#">終了しました</a>
+            <h3 class="txt">2024年4月22日-2024年4月26日</h3>
+            <h4 class="txt">10:00-16:00(最終日は15時まで)<br>@B422</h4>
+            <p>※写真は<a class="link" href="https://stock.adobe.com/jp/">Adobe Stock（フリー素材）</a>から引用。</p>
+        </div>
+    </div>
+    <!-- トップビジュアルここまで -->
+
+    <!-- メインコンテンツの最大幅制限用 -->
+    <div class="main">
+        <!-- MAXについてここから -->
+        <!-- <div id="about_max">
+            <div class="about_max_container">
+                <div class="about_max_wrapper">
+                    <div class="about_max_box">
+                        <h1>About MAX</h1>
+                        <p>
+                            情報メディアセンターが提供するAIM Commons (B422) は、IT を活用した皆さんの学びを支援する場所です。4/22-4/26 の5
+                            日間でサービスの周知を目的としたイベントを行います。学生スタッフによる企画イベント「MAX」は、体験を通してみなさんのワクワクが最大化し、新しい活動の意欲になることを祈り、つけられました。貸出機器に実際に触れ、体験することができるのでぜひご参加ください。
+                        </p>
+                    </div>
+                </div>
+                <div class="about_max_wrapper">
+                    <img src="./images/aboutmax_fes.jpeg" alt="MAXの様子">
+                </div>
+                <img class="eye" src="./images/eye.svg" alt="目の画像">
+            </div>
+        </div> -->
+        <!-- MAXについてここまで -->
+
+        <!-- セッションここから -->
+        <div id="session">
+            <h1>Session</h1>
+            <div style="overflow: hidden" class="container">
+                <div class="session_box keynote_box">
+                    <h2>Keynote</h2>
+                    <img class="session_image" src="./images/session_man.jpeg" alt="セッションを行う男性">
+                    <div class="box_txt">
+                        <p>キーノートセッションでは、学生スタッフがプレゼンテーション方式でAIM Commonsの利用方法や、今後企画しているイベントのプレビューなどを行います。入場には料金はかかりません。
+                            B422を利用されたことがない方もお楽しみいただけるコンテンツです。
+                            <br>
+                        <div class="point">※写真は<a href="https://stock.adobe.com/jp/">Adobe Stock（フリー素材）</a>から引用。</div>
+                        </p>
+                    </div>
+                    <button id="open-btn-1" class="overlay-event1" type="button"><span
+                            class="material-symbols-rounded">add</span></button>
+                </div>
+                <div class="session_box">
+                    <h2>Workshop</h2>
+                    <img class="session_image" src="./images/workshop_image.jpeg" alt="ワークショップセッションを聞く人たち">
+                    <div class="box_txt">
+                        <p>ワークショップセッションでは、AIM Commons のサービスの一つであるワークショップについて、講師を務める学生スタッフが申し込み方法などについてプレゼンを行います。Adobe
+                            illustratorや、Photoshopを使ってみたいけど、どうやればいいかわからないなどの疑問にお答えできる内容となっております。
+                            <br>
+                        <div class="point">※写真は<a href="https://stock.adobe.com/jp/">Adobe Stock（フリー素材）</a>から引用。</div>
+                    </div>
+                    <button id="open-btn-2" class="overlay-event2" type="button"><span
+                            class="material-symbols-rounded">add</span></button>
+                </div>
+            </div>
+        </div>
+        <!-- セッションここまで -->
+
+        <!-- ブースここから -->
+        <div id="booth">
+            <h1>Booth</h1>
+            <div class="booth_container">
+                <p class="lead-txt">各ブースでは、AIM Commonsの提供するサービスを体験できるコンテンツを提供しています。<br>
+                <div class="point">※以下の写真は、本ページ制作者が撮影。</div>
+                </p>
+                <img class="areamap" src="./images/area_map.svg" alt="会場案内図">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <h2>AdobeFirefly体験コーナー</h2>
+                                <img class="session_image" src="./images/seion.JPG" alt="">
+                                <div class="box_txt">
+                                    <p class="detail-txt">
+                                        ここでは、Adobeが提供している生成AIのFireflyを体験することができます。プロンプトを入力するだけで簡単にクリエイティブなイラストを生成できるので、初心者の方にもおすすめです。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <h2>静音ブース体験コーナー</h2>
+                                <img class="session_image" src="./images/seion.JPG" alt="">
+                                <div class="box_txt">
+                                    <p class="detail-txt">
+                                        駅や町中で見かける静音ブースを体験することができます。機器貸出サービスの一部として貸し出されているもので、平常時は学習にご利用いただけます。（就職活動などにはご利用いただけません。スチューデント・センターの進路就職課にお問い合わせください。）
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <h2>広報スペース</h2>
+                                <img class="session_image" src="./images/koho.JPG" alt="">
+                                <div class="box_txt">
+                                    <p class="detail-txt">AIM Commons 公式YouTubeチャンネルで公開されているショート動画をご覧いただけます。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <h2>交流スペース</h2>
+                                <img class="session_image" src="./images/koho.JPG" alt="">
+                                <div class="box_txt">
+                                    <p class="detail-txt">AIM Commons
+                                        で働いている学生スタッフとの交流ができるスペースです。クリエイティブな活動を始めてみたい方などに貸出機器のご提案などもしています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <h2>貸出機器体験コーナー</h2>
+                                <img class="session_image" src="./images/kiki.JPG" alt="">
+                                <div class="box_txt">
+                                    <p class="detail-txt">
+                                        普段は貸出手続きをしないと、触ることができない貸出機器を「特別に」体験することができるブースです。体験をされたい方は、ブースの学生スタッフにお気軽にお声掛けください。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="box">
+                                <h2>グリーンバック体験コーナー</h2>
+                                <img class="session_image" src="./images/green.jpg" alt="">
+                                <div class="box_txt">
+                                    <p class="detail-txt">
+                                        グリーンバックで背景合成を気軽に楽しめるブースです。海外の背景や面白い背景など多数ご用意しています。合成してみたい背景がありましたら、ブースのスタッフにお気軽にお声掛けください。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <a class="btn_ti" href="#">終了しました</a>
+            </div>
+        </div>
+        <!-- ブースここまで -->
+
+        <!-- AIMここから -->
+        <div id="about">
+            <h1>About AIM Commons</h1>
+            <div class="about-aim-container">
+                <h2>- Special Thanks -</h2>
+                <p>　AIM Commons（B422）は情報メディアセンターが提供する共同学習スペースです。友人らと議論をしながら、より質の高い自習を行うことができます。
+                    また、AIM Commonsは学生の皆さんに映像収録機器・動画編集ブース貸出サービスを提供しています。それらは、学生証を提示することで、無償でかつ速やかに借りることができます。
+                    詳細はAIM Commonsホームページをご覧いただくか、直接B422へお越しください。学生スタッフが対応させていただきます。<br>
+                <div class="point">※以下の写真は、AIM Commons HP のスクリーンショット</div>
+                </p>
+                <img src="./images/AIM_Commons.png" alt="AIM CommonsのHPの画像">
+                <div class="btn">
+                    <a href="https://commons.aim.aoyama.ac.jp/"><span
+                            class="material-symbols-rounded">link</span>詳しく見る</a>
+                </div>
+            </div>
+        </div>
+        <!-- AIMここまで -->
+    </div>
+
+    <!-- フッターここから -->
+    <footer>
+        <div class="left">
+            <a href="#top">
+                <img class="image" src="./images/max_logo.svg" alt="MAXロゴ画像">
+            </a>
+            <a href="https://commons.aim.aoyama.ac.jp/">
+                <img class="image" src="./images/aim_logo.svg" alt="AIM Commonsロゴ画像">
+            </a>
+        </div>
+        <div class="right">
+            <ul>
+                <a href="index.html#session">
+                    <li>Session</li>
+                </a>
+                <a href="index.html#booth">
+                    <li>Booth</li>
+                </a>
+                <a href="index.html#about">
+                    <li>AIM Commons</li>
+                </a>
+            </ul>
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>Copyright © 2024 AIM Commons All Rights Reserved.</p>
+    </div>
+    <!-- フッターここまで -->
+
+    <!-- オーバーレイここから -->
+    <div id="overlay-1" class="overlay-event1">
+        <div class="flex">
+            <div id="overlay-inner-1">
+                <div class="tub-menu">
+                    <div id="keynote" class="area">
+                        <h2>Keynote</h2>
+                        <h3>Speakers</h3>
+                        <div class="speaker-wrapper">
+                            <div class="speaker-box">
+                                <img class="photo1" src="./images/woman1.png" alt="">
+                                <h4>Very Marry</h4>
+                                <p>Staff of AIM Commons</p>
+                            </div>
+                            <div class="speaker-box">
+                                <img class="photo2" src="./images/man1.png" alt="">
+                                <h4>Tom Tom</h4>
+                                <p>Staff of AIM Commons</p>
+                            </div>
+                        </div>
+                        <h3>TimeTable</h3>
+                        <table border="1">
+                            <tr>
+                                <td>4/22</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/23</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/24</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/25</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/26</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button id="close-btn-1" class="overlay-event1" type="button"><span
+                            class="material-symbols-rounded">close</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay-2" class="overlay-event2">
+        <div class="flex">
+            <div id="overlay-inner-2">
+                <div class="tub-menu">
+                    <div id="workshop" class="area">
+                        <h2>Workshop</h2>
+                        <h3>Speakers</h3>
+                        <div class="speaker-wrapper">
+                            <div class="speaker-box">
+                                <img class="photo3" src="./images/man2.png" alt="">
+                                <h4>Mr.J</h4>
+                                <p>Staff of AIM Commons</p>
+                            </div>
+                            <div class="speaker-box">
+                                <img class="photo4" src="./images/woman2.png" alt="">
+                                <h4>Baby.P.Cool</h4>
+                                <p>Staff of AIM Commons</p>
+                            </div>
+                        </div>
+                        <h3>TimeTable</h3>
+                        <table border="1">
+                            <tr>
+                                <td>4/22</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/23</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>4/24</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/25</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                            <tr>
+                                <td>4/26</td>
+                                <td>12:30-12:50</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button id="close-btn-2" class="overlay-event2" type="button"><span
+                            class="material-symbols-rounded">close</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- オーバーレイここまで -->
+
+</body>
+
+</html>

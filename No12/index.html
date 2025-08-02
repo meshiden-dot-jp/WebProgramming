@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            var str="";
+            str+="クッキーで保存されている内容："+getCookie()+"<br>";
+            document.getElementById("dat").innerHTML=str;
+        }
+        function getCookie(){
+            var cookieStr=document.cookie+";";
+            var startNum=cookieStr.indexOf("cookie_data");
+            var txt="";
+            if(startNum!=-1){
+                var endNum=cookieStr.indexOf(";",startNum);
+                txt=unescape(cookieStr.substring(startNum)+"cookie_data".length+1,endNum);
+            }
+            return txt;
+        }
+        function saveCookie(){
+            var txt=document.getElementById("dat2").value;
+            var day=new Date();
+            day.setTime(day.getTime()+60*5*1000);
+
+            document.cookie="cookie_data"+escape(txt)+";expires="+day.toGMTString();
+
+            location.reload();
+        }
+        function delCookie(){
+            var day=new Date();
+            day.setTime(0);
+            document.cookie="cookie_data=;expires="+day.toGMTString();
+
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color:#ccc;">
+        <div id="dat"></div><br>
+        <input type="text" id="dat2" placeholder="クッキーに保存する内容を入力してください"><br>
+        <input type="button" value="クッキー保存" onclick="saveCookie()"><br>
+        <input type="button" value="クッキー削除" onclick="delCookie()">
+    </div>
+</body>
+</html>

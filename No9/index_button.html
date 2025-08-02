@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ウェブプログラミング・JavaScriptデモ</title>
+  <link rel="stylesheet" href="./main_button.css">
+
+</head>
+
+<body>
+  <canvas id="mycanvas" data-border-color="rgba(120,190,150,1.0)" data-fill-color="rgba(120,190,150,0.2)"></canvas>
+
+  <script>
+    function init() {
+      const mycanvas = document.getElementById('mycanvas');
+      mycanvas.width = mycanvas.clientWidth;
+      mycanvas.height = mycanvas.clientHeight;
+      mycanvas.dataset.endpos = 0;
+      mycanvas.dataset.mode = 1;
+      mycanvas.dataset.drawTimer = 0;
+      mycanvas.addEventListener('mouseover', canvasOnMouseOver);
+      mycanvas.addEventListener('mouseleave', canvasOnMouseLeave);
+      clearAndDrawCanvasFace(mycanvas);
+    }
+
+    function drawCanvasOnTimer(obj) {
+      clearAndDrawCanvasFace(obj);
+      drawCanvasBorder(obj);
+      let endpos = parseFloat(obj.dataset.endpos);
+      const mode = parseInt(obj.dataset.mode);
+      const d_angle = Math.PI * 2.0 / 100.0;
+      if (mode == 1) {
+        if (endpos >= Math.PI * 2.0) {
+          endpos = Math.PI * 2.0;
+          clearInterval(parseInt(obj.dataset.drawTimer));
+          obj.dataset.mode = 0;
+        }
+        else {
+          endpos = Math.min(Math.PI * 2.0, endpos + d_angle);
+        }
+      }
+
+      if (mode == 2) {
+        if (endpos <= 0.0) {
+          endpos = 0.0;
+          clearInterval(parseInt(obj.dataset.drawTimer));
+          obj.dataset.mode = 0;
+        }
+        else {
+          endpos = Math.max(0.0, endpos - d_angle);
+        }
+      }
+      obj.dataset.endpos = String(endpos);
+    }
+    window.onload = init;
+
+    function canvasOnMouseOver() {
+      this.dataset.mode = 1;
+      clearInterval(parseInt(this.dataset.drawTimer));
+      this.dataset.drawTimer = String(setInterval(drawCanvasOnTimer, 5, this));
+    }
+    function canvasOnMouseLeave() {
+      this.dataset.mode = 2;
+      clearInterval(parseInt(this.dataset.drawTimer));
+      this.dataset.drawTimer = String(setInterval(drawCanvasOnTimer, 5, this));
+    }
+    function clearAndDrawCanvasFace(obj) {
+      let ctx = obj.getContext('2d');
+      let width = obj.width;
+      let height = obj.height;
+      ctx.clearRect(0, 0, width, height);
+      let size = Math.min(width, height) - 2;
+      ctx.beginPath();
+      ctx.fillStyle = obj.dataset.fillColor;
+      ctx.arc(width / 2, height / 2, size / 2, 0, Math.PI * 2.0, false);
+      ctx.fill();
+    }
+
+
+    function drawCanvasBorder(obj) {
+      const ctx = obj.getContext('2d');
+      const width = obj.width;
+      const height = obj.height;
+      const size = Math.min(width, height) - 2;
+      const endpos = parseFloat(obj.dataset.endpos);
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.strokeStyle = obj.dataset.borderColor;
+      ctx.arc(width / 2, height / 2, size / 2, 0, endpos, false);
+      ctx.stroke();
+    }
+
+  </script>
+</body>
+
+</html>

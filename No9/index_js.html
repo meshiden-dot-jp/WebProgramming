@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ウェブプログラミング・JavaScriptデモ</title>
+    <link rel="stylesheet" href="./main_js.css">
+  </head>
+  <body>
+    <div id="text1"></div>
+    <div id="text2"></div>
+
+    <div class="ib">半径</div>
+    <div class="ib"><input id="input" type="text" value="0" /></div>
+    <div id="text3" class="ib">の円の面積は0です. </div>
+
+    <div class="box-ball ball" id="box-ball"> </div>
+
+    <script>
+      const pi = 3.14159265;
+      const radius = 8.0;
+      const area = pi * radius * radius;
+      const div_text1 = document.getElementById('text1');
+      div_text1.innerHTML = '半径' + String(radius) + 'の円の面積は' + String(area) + 'です.';
+
+      const N = 10;
+      let ans = 0;
+      for( let i=1; i<=N; i++ ) {
+        ans = ans + i;
+      }
+      const div_text2 = document.getElementById('text2');
+      div_text2.innerHTML = '1から' + String(N) +  'までの総和は' + String(ans) + 'です.';
+
+      const input = document.getElementById('input');
+      input.addEventListener('input', function(){
+        const radius = parseFloat(input.value);
+        const area = pi * radius * radius;
+        const div_text3 = document.getElementById('text3');
+        div_text3.innerHTML = 'の円の面積は' + String(area) + 'です.';
+      });
+
+      const div_click_item = document.getElementById('box-ball');
+      div_click_item.addEventListener('click', function(){
+        if(div_click_item.classList.contains('ball')) {
+          div_click_item.classList.remove('ball');
+          div_click_item.classList.add('box');
+        }
+        else if(div_click_item.classList.contains('box')) {
+          div_click_item.classList.remove('box');
+          div_click_item.classList.add('ball');
+        }
+      });
+    </script>
+
+  </body>
+</html>

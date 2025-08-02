@@ -1,0 +1,60 @@
+.ib {
+  display: inline-block;
+}
+
+.ball {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: plum;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: rotate(0deg);
+  transform-origin: 50% 0;
+}
+
+.box {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: mediumaquamarine;
+  border-radius: 0%;
+  transition: 0.5s;
+  transform: rotateY(540deg);
+  transform-origin: 50% 0;
+}
+
+.block {
+  display: block;
+}
+
+.button {
+  border: solid 1px skyblue;
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: skyblue;
+  margin: 0;
+}
+
+.detail-show {
+  display: block;
+  background: olive;
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+  margin: 0;
+}
+
+.detail-hidden {
+  display: block;
+  background: none;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}

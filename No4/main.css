@@ -1,0 +1,47 @@
+body{
+    background:linear-gradient(#ff0000,#ffff00);
+}
+a{
+    opacity: 1;
+}
+a:hover{
+    opacity: 0.5;
+}
+img{
+    width: 180px;
+    padding: 0px;
+    margin: 2px 2px;
+}
+.myfont{
+    font-family: "Helvetica Neue",Arial,"Hiragino Sans","Hiragino kaku Gothic ProN",Meiryo, sans-serif;
+}
+.greentxt{
+    color: #117f33;
+}
+h1{
+    font-size: 28px;
+    text-align: center;
+}
+h2{
+    font-size: 20px;
+    background-color: #559966;
+    padding: 5px;
+    color: #ddffdd;
+    text-align: center;
+}
+p{
+    font-size: 16px;
+}
+hr{
+    border:none;
+    background-color: #f0fff6;
+    border-top: 2px dashed #117f33;
+}
+div{
+    background-color: #ddffbb;
+    padding:30px 30px;
+    width: 80%;
+    margin: 8px auto;
+    border-radius: 24px;
+    box-shadow: 1px 1px 10px -5px rgba(0.3,0.7,0.4,0.8);
+}
