@@ -1,154 +1,154 @@
-# CLAUDE.md — WebProgramming Repository Guide
+# CLAUDE.md — WebProgramming リポジトリガイド
 
-This file provides context for AI assistants working in this repository.
+このファイルは、リポジトリで作業するAIアシスタント向けのコンテキスト情報を提供します。
 
-## Repository Overview
+## リポジトリ概要
 
-This is a **student web development learning repository** containing a finished event marketing website (MAX event) for an AIM Commons university facility, plus iterative assignment/practice projects. All code is vanilla HTML5/CSS3/JavaScript — no build tools, frameworks, or package managers.
+これは**学生向けWeb開発学習リポジトリ**です。AIM Commons大学施設のイベントマーケティングサイト（MAXイベント）の完成版と、反復的な課題・練習プロジェクトを含みます。すべてのコードはバニラHTML5/CSS3/JavaScriptで書かれており、ビルドツール・フレームワーク・パッケージマネージャは使用しません。
 
-## Directory Structure
+## ディレクトリ構成
 
 ```
 WebProgramming/
-├── final/          # Production-ready event website (MAX)
-├── wip/            # Work-in-progress / active development version
-├── No2/ … No12/    # Numbered course assignments (iterative learning)
-├── No2_pre/ …      # Pre-release variants of some assignments
-└── CLAUDE.md       # This file
+├── final/          # 本番用イベントサイト（MAX）
+├── wip/            # 作業中 / アクティブな開発バージョン
+├── No2/ … No12/    # 番号付きコース課題（反復学習）
+├── No2_pre/ …      # 一部課題のプレリリース版
+└── CLAUDE.md       # このファイル
 ```
 
-### Key directories
+### 主要ディレクトリ
 
-| Path | Purpose |
-|------|---------|
-| `final/` | Deployable version — treat as stable |
-| `wip/` | Development sandbox — can be modified freely |
-| `No*/` | Historical assignments — generally read-only reference |
+| パス | 用途 |
+|------|------|
+| `final/` | デプロイ可能な安定版 — 安定版として扱うこと |
+| `wip/` | 開発サンドボックス — 自由に変更可 |
+| `No*/` | 過去の課題 — 基本的に参照のみ（読み取り専用） |
 
-## Final Project Structure (`final/`)
+## finalプロジェクトの構成（`final/`）
 
 ```
 final/
-├── index.html          # Single-page application entry point (370 lines)
-├── main.css            # Global layout & desktop styles
-├── sub.css             # Mobile breakpoints (max-width: 800px) & overlays
-├── main.js             # Core JS: fonts, hamburger menu, overlays, Swiper
-├── images/             # SVG logos, JPG/PNG photos, favicons
-├── favicons/           # Multi-format favicon set + manifest.json
+├── index.html          # シングルページアプリのエントリーポイント（370行）
+├── main.css            # グローバルレイアウト & デスクトップスタイル
+├── sub.css             # モバイルブレークポイント（max-width: 800px）& オーバーレイ
+├── main.js             # コアJS: フォント・ハンバーガーメニュー・オーバーレイ・Swiper
+├── images/             # SVGロゴ、JPG/PNG写真、ファビコン
+├── favicons/           # マルチフォーマットファビコン一式 + manifest.json
 └── dist/
-    ├── css/swiper.css  # Swiper.js v6.6.2 styles (bundled locally)
-    └── js/swiper.js    # Swiper.js v6.6.2 library (bundled locally)
+    ├── css/swiper.css  # Swiper.js v6.6.2 スタイル（ローカルバンドル）
+    └── js/swiper.js    # Swiper.js v6.6.2 ライブラリ（ローカルバンドル）
 ```
 
-### Page sections (in order in `index.html`)
+### ページセクション（`index.html`の順序）
 
-1. **Header** — desktop nav bar + mobile hamburger (checkbox toggle)
-2. **Top visual** — hero image with key visual
-3. **Session** — Keynote & Workshop cards with overlay modals
-4. **Booth** — Swiper.js image carousel with autoplay
-5. **About AIM Commons** — facility description
-6. **Footer**
+1. **ヘッダー** — デスクトップナビゲーションバー + モバイルハンバーガーメニュー（チェックボックストグル）
+2. **トップビジュアル** — キービジュアル付きヒーロー画像
+3. **セッション** — KeynoteとWorkshopカード（オーバーレイモーダル付き）
+4. **ブース** — Swiper.js画像カルーセル（自動再生）
+5. **AIM Commonsについて** — 施設説明
+6. **フッター**
 
-## External Dependencies
+## 外部依存関係
 
-No npm/yarn. All dependencies are either CDN-loaded or bundled in `dist/`.
+npm/yarnは使用しません。すべての依存関係はCDN読み込みまたは`dist/`にバンドルされています。
 
-| Library | Version | How loaded |
-|---------|---------|-----------|
-| Swiper.js | 6.6.2 | Bundled at `dist/js/swiper.js` |
-| Adobe Typekit | kitId `bgh3yko` | Dynamic script from `https://use.typekit.net/` |
-| Google Material Symbols | latest | CDN link in `<head>` |
-| jQuery | unknown | WIP/test files only — **not used in `final/`** |
+| ライブラリ | バージョン | 読み込み方法 |
+|-----------|-----------|------------|
+| Swiper.js | 6.6.2 | `dist/js/swiper.js`にバンドル |
+| Adobe Typekit | kitId `bgh3yko` | `https://use.typekit.net/`から動的スクリプト読み込み |
+| Google Material Symbols | 最新版 | `<head>`内のCDNリンク |
+| jQuery | 不明 | WIP/テストファイルのみ — **`final/`では未使用** |
 
-**Font families**: `"din-2014"`, `"ryo-gothic-plusn"`, sans-serif (Typekit)
+**フォントファミリー**: `"din-2014"`、`"ryo-gothic-plusn"`、sans-serif（Typekit）
 
-## JavaScript Conventions (`main.js`)
+## JavaScriptの規約（`main.js`）
 
-- Vanilla JS only (no jQuery in `final/`)
-- Typekit loaded via dynamic `<script>` injection with `try { Typekit.load({...}) } catch(e) {}`
-- Hamburger menu: `uncheckCheckbox()` sets checkbox `checked = false`
-- Overlay system: `openOverlay(id)` / `closeOverlay(id)` target elements by ID
-- Event bubbling stopped on overlay content containers with `event.stopPropagation()`
-- Swiper initialized after DOM ready with `autoplay: { delay: 5000 }`
+- バニラJSのみ（`final/`にjQueryは使用しない）
+- Typekitは`try { Typekit.load({...}) } catch(e) {}`による動的`<script>`インジェクションで読み込み
+- ハンバーガーメニュー: `uncheckCheckbox()`でチェックボックスの`checked`を`false`に設定
+- オーバーレイシステム: `openOverlay(id)` / `closeOverlay(id)`でIDによる要素操作
+- オーバーレイのコンテンツコンテナで`event.stopPropagation()`によるイベントバブリング停止
+- Swiperは`autoplay: { delay: 5000 }`でDOMレディ後に初期化
 
-## CSS Conventions
+## CSSの規約
 
-- **Mobile-first breakpoint**: `@media screen and (max-width: 800px)` in `sub.css`
-- Desktop styles in `main.css`, mobile overrides in `sub.css`
-- CSS custom properties (variables) not used — values are hardcoded
-- Japanese comments mark sections: e.g., `/* ヘッダー */`, `/* メインコンテンツ */`
-- Flexbox and CSS Grid used for layout
-- Smooth scrolling enabled via `html { scroll-behavior: smooth; }`
+- **モバイルブレークポイント**: `sub.css`内の`@media screen and (max-width: 800px)`
+- デスクトップスタイルは`main.css`、モバイルオーバーライドは`sub.css`
+- CSSカスタムプロパティ（変数）は使用しない — 値はハードコード
+- 日本語コメントでセクションを区切る: 例）`/* ヘッダー */`、`/* メインコンテンツ */`
+- レイアウトにはFlexboxとCSS Gridを使用
+- `html { scroll-behavior: smooth; }`でスムーズスクロールを有効化
 
-## HTML Conventions
+## HTMLの規約
 
-- Single `index.html` per project (no multi-page routing)
-- Navigation anchors use `#section-id` for in-page scrolling
-- Modal overlays use hidden checkbox + label trick for pure-CSS toggle (alongside JS)
-- Image paths are relative (e.g., `images/max_logo.svg`)
-- Language: primarily Japanese (`lang="ja"`)
+- プロジェクトごとに`index.html`を1ファイル（マルチページルーティングなし）
+- ナビゲーションアンカーは`#section-id`でページ内スクロール
+- モーダルオーバーレイは非表示チェックボックス + labelのCSSトグルを使用（JSと併用）
+- 画像パスは相対パス（例: `images/max_logo.svg`）
+- 言語: 主に日本語（`lang="ja"`）
 
-## Development Workflow
+## 開発ワークフロー
 
-There is **no build step**. Edit files directly and open in a browser.
+**ビルドステップはありません**。ファイルを直接編集してブラウザで開きます。
 
 ```
-# Typical workflow
-1. Make changes in wip/ (safe sandbox)
-2. Test by opening wip/index.html in a browser
-3. Copy changes to final/ when stable
+# 典型的なワークフロー
+1. wip/ で変更を加える（安全なサンドボックス）
+2. ブラウザで wip/index.html を開いてテスト
+3. 安定したら final/ にコピー
 ```
 
-There are no linters, formatters, or pre-commit hooks configured.
+リンター・フォーマッター・プリコミットフックは設定されていません。
 
-## Testing
+## テスト
 
-No automated test framework. Manual testing only:
+自動テストフレームワークはありません。手動テストのみ:
 
-- `wip/test.html` / `wip/test.js` — informal jQuery tab tests
-- `wip/modal.html` — modal component isolation testing
-- Verify changes in a browser at multiple viewport widths (especially ≤800px)
+- `wip/test.html` / `wip/test.js` — jQueryタブの非公式テスト
+- `wip/modal.html` — モーダルコンポーネントの単体テスト
+- 複数のビューポート幅（特に≤800px）でブラウザ確認
 
-## Git Configuration
+## Git設定
 
-- Remote: internal proxy at `http://local_proxy@127.0.0.1:42477/git/meshiden-dot-jp/WebProgramming`
-- Default branch: `master`
-- No `.gitignore` — all files are tracked
-- Commit with clear English messages describing what changed
+- リモート: 内部プロキシ `http://local_proxy@127.0.0.1:42477/git/meshiden-dot-jp/WebProgramming`
+- デフォルトブランチ: `master`
+- `.gitignore`なし — 全ファイルがトラッキング対象
+- 変更内容を明確に説明した英語のコミットメッセージを使用
 
-## Image Assets
+## 画像アセット
 
-Located in `final/images/` and `wip/images/`:
+`final/images/`と`wip/images/`に格納:
 
-- Logos: SVG format (`max_logo.svg`, `aim_logo.svg`)
-- Photos: JPG/PNG, some very large (2–5 MB each) — do not compress without permission
-- Area map: `area_map.svg` (45.9 KB)
-- Favicons: multiple sizes in `final/favicons/`
+- ロゴ: SVG形式（`max_logo.svg`、`aim_logo.svg`）
+- 写真: JPG/PNG、一部非常に大きい（各2〜5 MB）— 許可なく圧縮しないこと
+- エリアマップ: `area_map.svg`（45.9 KB）
+- ファビコン: `final/favicons/`内に複数サイズ
 
-## Things to Avoid
+## 避けるべきこと
 
-- Do not introduce npm, webpack, or any build toolchain unless explicitly requested
-- Do not add jQuery to `final/` — it uses vanilla JS only
-- Do not modify files in `No*/` directories unless specifically asked
-- Do not delete image files — they may be referenced indirectly
-- Do not upgrade Swiper.js without testing the carousel — the API changed significantly between v6 and v7+
-- Avoid adding CSS custom properties for values that are only used once
+- 明示的に要求されない限り、npm・webpack・ビルドツールチェーンを導入しない
+- `final/`にjQueryを追加しない — バニラJSのみを使用
+- 特別に依頼されない限り、`No*/`ディレクトリのファイルを変更しない
+- 画像ファイルを削除しない — 間接的に参照されている可能性がある
+- カルーセルをテストせずにSwiper.jsをアップグレードしない — v6とv7以降でAPIが大幅に変更された
+- 一度しか使用しない値にCSSカスタムプロパティを追加しない
 
-## Common Tasks
+## よくある作業
 
-**Adding a new section to the event page**
-1. Add HTML in `final/index.html` between existing sections
-2. Add nav anchor in the `<header>` nav list
-3. Style desktop layout in `main.css`
-4. Add mobile overrides in `sub.css` under the existing `@media` block
+**イベントページに新しいセクションを追加する**
+1. `final/index.html`の既存セクション間にHTMLを追加
+2. `<header>`のナビリストにナビアンカーを追加
+3. `main.css`でデスクトップレイアウトをスタイリング
+4. `sub.css`の既存`@media`ブロック内にモバイルオーバーライドを追加
 
-**Adding a new overlay/modal**
-1. Add overlay `<div id="overlay-NAME">` in HTML
-2. Add open trigger (button/link calling `openOverlay('overlay-NAME')`)
-3. Add close button calling `closeOverlay('overlay-NAME')`
-4. Style similarly to existing `.overlay` rules in `sub.css`
+**新しいオーバーレイ/モーダルを追加する**
+1. HTMLに`<div id="overlay-NAME">`を追加
+2. 開くトリガー（`openOverlay('overlay-NAME')`を呼び出すボタン/リンク）を追加
+3. `closeOverlay('overlay-NAME')`を呼び出す閉じるボタンを追加
+4. `sub.css`の既存`.overlay`ルールに合わせてスタイリング
 
-**Modifying the Swiper carousel**
-- Config is in `main.js` — the `new Swiper(...)` call
-- CSS is in `dist/css/swiper.css` (do not edit — it's a library file)
-- Custom carousel styles go in `main.css` or `sub.css`
+**Swiperカルーセルを変更する**
+- 設定は`main.js`内の`new Swiper(...)`呼び出しにある
+- CSSは`dist/css/swiper.css`（ライブラリファイルのため編集しないこと）
+- カスタムカルーセルスタイルは`main.css`または`sub.css`に記述
